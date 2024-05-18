@@ -35,9 +35,9 @@ class TextClassificationDataModuleConfig(DataModuleConfig):
 @dataclass
 class ScrappedDataTextClassificationDataModuleConfig(TextClassificationDataModuleConfig):
     batch_size: int = 64
-    train_df_path: str = "gs://emkademy/cybulde/data/processed/rebalanced_splits/train.parquet"
-    dev_df_path: str = "gs://emkademy/cybulde/data/processed/rebalanced_splits/dev.parquet"
-    test_df_path: str = "gs://emkademy/cybulde/data/processed/rebalanced_splits/test.parquet"
+    train_df_path: str = "gs://luizweb/cybulde/data/processed/rebalanced_splits/train.parquet"
+    dev_df_path: str = "gs://luizweb/cybulde/data/processed/rebalanced_splits/dev.parquet"
+    test_df_path: str = "gs://luizweb/cybulde/data/processed/rebalanced_splits/test.parquet"
     transformation: transformation_schemas.TransformationConfig = SI(
         "${..lightning_module.model.backbone.transformation}"
     )

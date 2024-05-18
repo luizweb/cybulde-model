@@ -76,12 +76,12 @@ tasks:
       pin_memory: true
       drop_last: true
       persistent_workers: false
-      train_df_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/train.parquet
-      dev_df_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/dev.parquet
-      test_df_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/test.parquet
+      train_df_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/train.parquet
+      dev_df_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/dev.parquet
+      test_df_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/test.parquet
       transformation:
         _target_: cybulde.models.transformations.HuggingFaceTokenizationTransformation
-        pretrained_tokenizer_name_or_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/trained_tokenizer
+        pretrained_tokenizer_name_or_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/trained_tokenizer
         max_sequence_length: 200
       text_column_name: cleaned_text
       label_column_name: label
@@ -93,7 +93,7 @@ tasks:
           _target_: cybulde.models.backbones.HuggingFaceBackbone
           transformation:
             _target_: cybulde.models.transformations.HuggingFaceTokenizationTransformation
-            pretrained_tokenizer_name_or_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/trained_tokenizer
+            pretrained_tokenizer_name_or_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/trained_tokenizer
             max_sequence_length: 200
           pretrained_model_name_or_path: prajjwal1/bert-tiny
           pretrained: false
@@ -240,12 +240,12 @@ tasks:
       pin_memory: true
       drop_last: true
       persistent_workers: false
-      train_df_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/train.parquet
-      dev_df_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/dev.parquet
-      test_df_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/test.parquet
+      train_df_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/train.parquet
+      dev_df_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/dev.parquet
+      test_df_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/test.parquet
       transformation:
         _target_: cybulde.models.transformations.HuggingFaceTokenizationTransformation
-        pretrained_tokenizer_name_or_path: gs://emkademy/cybulde/data/processed/rebalanced_splits/trained_tokenizer
+        pretrained_tokenizer_name_or_path: gs://luizweb/cybulde/data/processed/rebalanced_splits/trained_tokenizer
         max_sequence_length: 200
       text_column_name: cleaned_text
       label_column_name: label

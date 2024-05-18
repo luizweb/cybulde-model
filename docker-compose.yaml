@@ -6,13 +6,13 @@ volumes:
 
 x-app-template: &APP_TEMPLATE
   user: "${USER_ID:-1000}"
-  hostname: "${HOST_NAME:-emkademy}"
+  hostname: "${HOST_NAME:-luizsimoes}"
   image: cybulde-model
   build:
     context: .
     dockerfile: ./docker/Dockerfile
     args:
-      USER_NAME: "${USER_NAME:-kyuksel}"
+      USER_NAME: "${USER_NAME:-luizweb}"
       USER_ID: "${USER_ID:-1000}"
   env_file:
     - .envs/.postgres
